@@ -7,16 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
+	<%
 for(int i = 2; i < 10; i++) {
 %>
 	<h2><%= i %> 단</h2>	
 <%	
-for(int j = 1; j < 10; j++) {
+	for(int j = 1; j < 10; j++) {		 
+	out.print(i + " * " + j + " = " + i * j + "&nbsp&nbsp&nbsp&nbsp");
+	}	
+}
 %>
-	<%=i %> * <%=j %> = <%= i * j %>
-	<% } %>	
-	<br />
-<% } %>
 </body>
 </html>

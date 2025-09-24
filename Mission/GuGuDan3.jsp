@@ -7,18 +7,23 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <%
-int val = Integer.parseInt(request.getParameter("val"));
+try {	
+	int val = Integer.parseInt(request.getParameter("val"));
 %>
-<%
-for(int i = 2; i < 10; i++) {
-%>
-	<h2><%= val %> 단</h2>	
-	<%	
+	<h2><%= val %> 단</h2>
+<% 
+	if(val > 10 || val < 2) {	
+		val = 2;
+	} 	
 	for(int j = 1; j < 10; j++) {
-	%>
-		<%=val %> * <%=j %> = <%= val * j %> <br />
-	<% } %>	
-<% } %>
+		out.print(val + " * " + j + " = " + val * j + "<br />");
+ 	}
+} 
+catch (Exception e) {
+	out.print("숫자를 입력하세요");
+}
+%>
 </body>
 </html>
