@@ -5,17 +5,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<style>
+ 		table {
+ 			border:1px solid;
+ 			border-collapse: collapse;
+ 		}
+ 		td, tr {
+ 			border:1px solid;
+ 			padding: 4px 10px;
+ 		}
+ 		.title {
+ 			text-align: center;
+ 			background-color: lightgray;
+ 		}
+ 	</style>
 </head>
 <body>
-	<%
-for(int i = 2; i < 10; i++) {
-%>
-	<h2><%= i %> 단</h2>	
-<%	
-	for(int j = 1; j < 10; j++) {		 
-	out.print(i + " * " + j + " = " + i * j + "&nbsp&nbsp&nbsp&nbsp");
-	}	
-}
-%>
+	<table>
+        <tr>
+            <% 
+            for(int i = 2; i <= 9; i++) { 
+            %>
+                <td class="title"><%= i %>단</td>
+            <% 
+            } 
+            %>
+        </tr>
+        	<% 
+            for(int j = 1; j <= 9; j++) { 
+        	%>
+            <tr>
+                <% 
+                for(int i = 2; i <= 9; i++) { 
+                %>
+                	<td><%= i %> * <%= j %> = <%= i * j %></td>
+                <% 
+                } 
+                %>
+            </tr>
+        <% 
+        } 
+        %>
+    </table>
 </body>
 </html>
