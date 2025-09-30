@@ -10,6 +10,7 @@
 	<%
 		String gugudan = request.getParameter("gugudan");
 		String dan = request.getParameter("dan");
+		String type2 = request.getParameter("type2");
 		if(gugudan != null) {
 			if(Integer.parseInt(dan) >= 2 && Integer.parseInt(dan) <= 9) {
 				switch(gugudan){
@@ -17,7 +18,15 @@
 					response.sendRedirect("GuGuDan1.jsp");
 					break;
 				case "gugudan2":
-					response.sendRedirect("GuGuDan2.jsp");
+					if(type2 != null && type2.equals("table")) {
+						response.sendRedirect("GuGuDan2.jsp");
+					}
+					else if(type2 != null && type2.equals("notTable")) {
+						response.sendRedirect("GuGuDan2_1.jsp");
+					}
+					else {
+						response.sendRedirect("GuGuDanForm.jsp");
+					}
 					break;
 				case "gugudan3":
 					response.sendRedirect("GuGuDan3.jsp?val=" + dan);
