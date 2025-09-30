@@ -17,6 +17,7 @@
  		.title {
  			text-align: center;
  			background-color: lightgray;
+ 			font-weight: bold;
  		}
  	</style>
 </head>
