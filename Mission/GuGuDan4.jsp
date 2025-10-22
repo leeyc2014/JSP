@@ -6,21 +6,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-.dan {
-	display: flex;
-	margin-bottom: 20px;
-}
+	.dan {
+		display: flex;
+		margin-bottom: 20px;
+	}
 
-.content {
-	margin-right: 30px;
-}
+	.content {
+		margin-right: 30px;
+	}
 
-.title {
-	font-size: x-large;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 5px;
-}
+	.title {
+		font-size: x-large;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 5px;
+	}
 </style>
 </head>
 <body>
@@ -40,7 +40,8 @@
 			<%
 			for (int j = 1; j < 10; j++) {
 			%>
-			<div><%= i + k %> * <%= j %> = <%= (i + k) * j %></div>
+				<%= i + k %> * <%= j %> = <%= (i + k) * j %><br />
+		   <!-- out.print((i + k) + " * " + j + " = " + (i + k) * j + "<br />"); -->
 			<%
 			}
 			%>
@@ -48,8 +49,8 @@
 		<%
 		}
 		%>
-		</div>
-		<%
+	</div>
+	<%
 		}
 	} 
 	catch (Exception e) {
