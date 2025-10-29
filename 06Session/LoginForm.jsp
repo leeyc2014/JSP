@@ -1,3 +1,4 @@
+<%@page import="utils.JSFunction"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,6 +8,7 @@
 <title>Session</title>
 </head>
 <body>
+<jsp:include page="../Common/Link.jsp" />
 	<h2>로그인 페이지</h2>
 	<span style="color: red; font-size: 1.2em;">
 		<%= request.getAttribute("LoginErrMsg") == null ? "" : request.getAttribute("LoginErrMsg") %>
@@ -35,9 +37,10 @@
 	<%
 		} else {	// 로그인된 상태	
 	%>
-		<%= session.getAttribute("UserName") %> 회원님, 로그인하셨습니다.<br />
-		<a href="Logout.jsp">[로그아웃]</a>
+		<!-- <%= session.getAttribute("UserName") %> 회원님, 로그인하셨습니다.<br />
+		<a href="Logout.jsp">[로그아웃]</a> -->
 	<%
+	JSFunction.alertLocation(session.getAttribute("UserName") + "회원님, 로그인하셨습니다.", "../08Board/List.jsp", out);
 	}
 	%>
 </body>
