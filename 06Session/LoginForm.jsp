@@ -18,7 +18,7 @@
 		// 로그아웃 상태
 	%>
 	<script>
-	funion validateForm(form) {
+	function validateForm(form) {
 		if(!form.user_id.value) {
 			alert("아이디를 입력하세요.");
 			return false;
